@@ -33,21 +33,29 @@ final class MainCoordinator: ObservableObject {
 extension MainCoordinator {
     /// Open login scene
     func openLogin() {
-        loginViewModel = .init()
+        DispatchQueue.main.async {
+            self.loginViewModel = .init()
+        }
     }
     
     /// Open sign scene
     func openSignup() {
-        signupViewModel = .init()
+        DispatchQueue.main.async {
+            self.signupViewModel = .init()
+        }
     }
     
     /// Open filters scene
     func openFilters() {
-        filtersViewModel = .init()
+        DispatchQueue.main.async {
+            self.filtersViewModel = .init()
+        }
     }
     
     /// Open map scene
     func openMap() {
-        mapViewModel = .init()
+        DispatchQueue.main.async {
+            self.mapViewModel = .init()
+        }
     }
 }

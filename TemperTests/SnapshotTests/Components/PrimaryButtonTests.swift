@@ -3,7 +3,7 @@ import SwiftUI
 import SnapshotTesting
 @testable import Temper
 
-class PrimaryButtonTests: XCTestCase {
+final class PrimaryButtonTests: XCTestCase {
     @MainActor func test_primaryButton_viewRendersCorrectly() {
         let viewModel = PrimaryButtonViewModel(title: "Primary button", action: {})
         

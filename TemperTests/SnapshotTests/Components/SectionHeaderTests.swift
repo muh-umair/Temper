@@ -3,7 +3,7 @@ import SwiftUI
 import SnapshotTesting
 @testable import Temper
 
-class SectionHeaderTests: XCTestCase {
+final class SectionHeaderTests: XCTestCase {
     @MainActor func test_sectionHeader_viewRendersCorrectly() {
         let viewModel = SectionHeaderViewModel(text: "Title")
         

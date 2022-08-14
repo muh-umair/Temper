@@ -59,6 +59,25 @@ extension View {
 
 }
 
+extension View {
+    func alert<Destination: View>(
+        item: Binding<String?>,
+        @ViewBuilder actions: @escaping () -> Destination
+    ) -> some View {
+        let isActive = Binding(
+            get: { item.wrappedValue != nil },
+            set: { value in
+                if !value {
+                    item.wrappedValue = nil
+                }
+            }
+        )
+        
+        return alert(item.wrappedValue ?? "", isPresented: isActive, actions: actions)
+    }
+
+}
+
 extension NavigationLink {
 
     init<T: Identifiable, D: View>(item: Binding<T?>,

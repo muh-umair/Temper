@@ -7,7 +7,7 @@
 
 import XCTest
 
-class TemperUITests: XCTestCase {
+final class TemperUITests: XCTestCase {
     
     var app: XCUIApplication!
     

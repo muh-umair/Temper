@@ -3,7 +3,7 @@ import SwiftUI
 import SnapshotTesting
 @testable import Temper
 
-class InvertedButtonTests: XCTestCase {
+final class InvertedButtonTests: XCTestCase {
     @MainActor func test_invertedButton_viewRendersCorrectly() {
         let viewModel = InvertedButtonViewModel(title: "Inverted button", action: {})
         

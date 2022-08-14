@@ -35,7 +35,7 @@ final class ShiftListViewViewModel: ObservableObject {
     @Published private(set) var isLoadingShifts = false
     
     /// Error message
-    @Published private(set) var errorMessage: String?
+    @Published var errorMessage: String?
     
     // MARK: - Private properties
     private unowned let coordinator: MainCoordinator?
@@ -86,6 +86,13 @@ final class ShiftListViewViewModel: ObservableObject {
             }
         }
     }
+    
+    /// Retry to fetch shifts from repository.
+    func retryLoadShifts() {
+        Task {
+            await fetchShifts()
+        }
+    }
 }
 
 // MARK: - Computed properties
@@ -125,7 +132,9 @@ extension ShiftListViewViewModel {
     /// Reset fetch request to current date and remove old data.
     func resetShifts() {
         fetchShiftsRequest = FetchShiftsRequest(date: Date())
-        shifts.removeAll()
+        DispatchQueue.main.async {
+            self.shifts.removeAll()
+        }
     }
     
     /// Fetch shifts from the repository and append them in the list. Also, moves the request to next date for next fetch requests.
@@ -133,18 +142,24 @@ extension ShiftListViewViewModel {
         guard !isLoadingShifts else {
             return
         }
-        isLoadingShifts = true
+        DispatchQueue.main.async {
+            self.isLoadingShifts = true
+        }
         do {
             let response = try await shiftsRepository.fetchShifts(fetchShiftsRequest)
-            append(shifts: response.shifts)
-            fetchShiftsRequest = FetchShiftsRequest(
-                date: fetchShiftsRequest.date.add(.day, 1) ?? fetchShiftsRequest.date
-            )
-            errorMessage = nil
-            isLoadingShifts = false
+            DispatchQueue.main.async {
+                self.append(shifts: response.shifts)
+                self.fetchShiftsRequest = FetchShiftsRequest(
+                    date: self.fetchShiftsRequest.date.add(.day, 1) ?? self.fetchShiftsRequest.date
+                )
+                self.errorMessage = nil
+                self.isLoadingShifts = false
+            }
         } catch let error {
-            errorMessage = (error as? NetworkError)?.errorDescription
-            isLoadingShifts = false
+            DispatchQueue.main.async {
+                self.errorMessage = (error as? NetworkError)?.errorDescription
+                self.isLoadingShifts = false
+            }
         }
     }
     

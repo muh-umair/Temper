@@ -11,7 +11,7 @@ import SnapshotTesting
 import Services
 @testable import Temper
 
-class ShiftRowViewTests: XCTestCase {
+final class ShiftRowViewTests: XCTestCase {
     func test_shiftRow_viewRendersCorrectly() {
         let viewModel = ShiftRowViewViewModel(
             shift: mockShift,

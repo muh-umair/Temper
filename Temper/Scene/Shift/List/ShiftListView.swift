@@ -99,6 +99,10 @@ struct ShiftListView: View {
         }
         .padding([.top], Config.contentTopPadding)
         .clipped()
+        .alert(item: $viewModel.errorMessage) {
+            Button("Retry") { viewModel.retryLoadShifts() }
+            Button("Cancel", role: .cancel) { }
+        }
     }
 }
 

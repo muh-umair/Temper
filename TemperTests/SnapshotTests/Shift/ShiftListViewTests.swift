@@ -11,7 +11,7 @@ import SnapshotTesting
 import Services
 @testable import Temper
 
-class ShiftListViewTests: XCTestCase {
+final class ShiftListViewTests: XCTestCase {
     func test_shiftList_viewRendersCorrectly() {
         let mockRepository = MockShiftRepository()
         mockRepository.shifts = [mockShift]

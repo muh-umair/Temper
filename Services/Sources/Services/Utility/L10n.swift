@@ -19,7 +19,7 @@ enum L10n: String {
 // MARK: - Localizable
 extension L10n {
     var localized: String {
-        return NSLocalizedString(self.rawValue, comment: "")
+        return NSLocalizedString(self.rawValue, bundle: .module, comment: "")
     }
 }
 
