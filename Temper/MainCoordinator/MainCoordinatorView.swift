@@ -30,6 +30,7 @@ struct MainCoordinatorView: View {
                 }
                 .navigationBarHidden(true)
         }
+        .preferredColorScheme(.light)
     }
 }
 

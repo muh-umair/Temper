@@ -121,6 +121,7 @@
 		8070E41D28A997590090D63D /* TemperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperUITests.swift; sourceTree = "<group>"; };
 		8070E42028A99B8A0090D63D /* AuthPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPage.swift; sourceTree = "<group>"; };
 		8070E42228A99BA30090D63D /* ShiftPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftPage.swift; sourceTree = "<group>"; };
+		8070E42428A9AFF10090D63D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +175,7 @@
 		8070E37A28A94EDB0090D63D /* Temper */ = {
 			isa = PBXGroup;
 			children = (
+				8070E42428A9AFF10090D63D /* Info.plist */,
 				8070E3F928A969BE0090D63D /* App */,
 				8070E3F428A967E40090D63D /* MainCoordinator */,
 				8070E3E828A962900090D63D /* Resource */,
@@ -816,10 +818,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Temper/Resource/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Temper/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Temper needs permission to show shift distance from your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -847,10 +849,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Temper/Resource/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Temper/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Temper needs permission to show shift distance from your location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
