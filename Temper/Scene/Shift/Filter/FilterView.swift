@@ -20,7 +20,7 @@ struct FilterView: View {
 }
 
 // MARK: - Accessibility
-extension FilterView {
+private extension FilterView {
     struct AccessibilityIdentifier {
         static let title: String = "Filter.Title"
     }

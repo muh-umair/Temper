@@ -140,9 +140,10 @@ extension ShiftListViewViewModel {
             fetchShiftsRequest = FetchShiftsRequest(
                 date: fetchShiftsRequest.date.add(.day, 1) ?? fetchShiftsRequest.date
             )
+            errorMessage = nil
             isLoadingShifts = false
         } catch let error {
-            errorMessage = error.localizedDescription
+            errorMessage = (error as? NetworkError)?.errorDescription
             isLoadingShifts = false
         }
     }

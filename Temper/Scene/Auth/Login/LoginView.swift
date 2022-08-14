@@ -19,9 +19,8 @@ struct LoginView: View {
     }
 }
 
-//TODO: maybe private?
 // MARK: - Accessibility
-extension LoginView {
+private extension LoginView {
     struct AccessibilityIdentifier {
         static let title: String = "Login.Title"
     }

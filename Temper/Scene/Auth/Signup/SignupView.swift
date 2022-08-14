@@ -20,7 +20,7 @@ struct SignupView: View {
 }
 
 // MARK: - Accessibility
-extension SignupView {
+private extension SignupView {
     struct AccessibilityIdentifier {
         static let title: String = "Signup.Title"
     }

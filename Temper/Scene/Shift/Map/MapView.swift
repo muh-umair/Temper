@@ -20,7 +20,7 @@ struct MapView: View {
 }
 
 // MARK: - Accessibility
-extension MapView {
+private extension MapView {
     struct AccessibilityIdentifier {
         static let title: String = "Map.Title"
     }

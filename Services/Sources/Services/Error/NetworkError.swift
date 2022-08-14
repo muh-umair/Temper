@@ -8,7 +8,7 @@
 import Foundation
 
 /// Network error to describe different conditions that can happen.
-enum NetworkError: Error, LocalizedError {
+public enum NetworkError: Error, LocalizedError {
     case undefined
     case invalidRequest
     case invalidResponse
@@ -16,7 +16,7 @@ enum NetworkError: Error, LocalizedError {
     case timeout
     case noNetwork
     
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .undefined: return L10n.network_error_undefined.localized
         case .invalidRequest: return L10n.network_error_invalid_request.localized

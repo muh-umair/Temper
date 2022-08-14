@@ -118,7 +118,7 @@ private extension ShiftListView {
 
 
 // MARK: - Accessibility
-extension ShiftListView {
+private extension ShiftListView {
     struct AccessibilityIdentifier {
         static let filtersButton: String = "ShiftsList.FiltersButton"
         static let mapButton: String = "ShiftsList.MapButton"
