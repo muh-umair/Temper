@@ -46,7 +46,7 @@ public extension Shift {
             case english = "en_GB"
         }
         
-        init(id: String, title: String, imageURL: URL?, clientName: String, address: Address, category: String) {
+        public init(id: String, title: String, imageURL: URL?, clientName: String, address: Address, category: String) {
             self.id = id
             self.title = title
             self.imageURL = imageURL

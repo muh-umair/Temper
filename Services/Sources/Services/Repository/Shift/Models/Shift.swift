@@ -29,7 +29,7 @@ public struct Shift: Decodable {
         case amount
     }
     
-    init(id: String, startsAt: Date, endsAt: Date, earningsPerHourCurrencyValue: String, earningsPerHourAmountValue: Double, job: Job) {
+    public init(id: String, startsAt: Date, endsAt: Date, earningsPerHourCurrencyValue: String, earningsPerHourAmountValue: Double, job: Job) {
         self.id = id
         self.startsAt = startsAt
         self.endsAt = endsAt

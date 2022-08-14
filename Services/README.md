@@ -6,7 +6,7 @@
 
 - XCode: 13.1
 - Swift tool version: 5.5
-- Minimum iOS Version: 14.0
+- Minimum iOS Version: 15.0
 - Minimum MacOS Version: 12.0
 - Dependency: No 3rd party dependencies
 

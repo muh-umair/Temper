@@ -8,14 +8,18 @@
 import Foundation
 
 /// Request to fetch shifts.
-struct FetchShiftsRequest: Codable {
-    let date: Date
+public struct FetchShiftsRequest: Codable {
+    public let date: Date
     
+    public init(date: Date) {
+        self.date = date
+    }
+        
     enum CodingKeys: String, CodingKey {
         case date = "filer[date]"
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         

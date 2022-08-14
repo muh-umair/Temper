@@ -31,7 +31,7 @@ public extension Shift {
             case directions = "get_directions"
         }
         
-        init(coordinate: CLLocationCoordinate2D, fullAddress: String, directionsURL: URL?) {
+        public init(coordinate: CLLocationCoordinate2D, fullAddress: String, directionsURL: URL?) {
             self.coordinate = coordinate
             self.fullAddress = fullAddress
             self.directionsURL = directionsURL

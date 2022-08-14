@@ -8,7 +8,7 @@
 import Foundation
 
 /// Networking protocol to which concrete networking must confirm.
-protocol NetworkingProtocol {
+public protocol NetworkingProtocol {
     
     /// Configure networking.
     ///
@@ -25,10 +25,10 @@ protocol NetworkingProtocol {
 }
 
 /// Networking implementation which will be used by different repositories.
-final class Networking {
+public final class Networking {
     
     /// Shared instance
-    static let shared = Networking()
+    public static let shared = Networking()
     
     // Should use mock data or actual request from network.
     private var isStubEnabled: Bool = false
@@ -47,7 +47,7 @@ extension Networking: NetworkingProtocol {
     ///
     /// - parameter isStubEnabled: If `true` use mock data otherwise use actual data from network.
     /// - parameter configuration: `URLSessionConfiguration` for the actual network request.
-    func configure(isStubEnabled: Bool, configuration: URLSessionConfiguration) {
+    public func configure(isStubEnabled: Bool, configuration: URLSessionConfiguration) {
         self.isStubEnabled = isStubEnabled
         self.urlSession = URLSession(configuration: configuration)
     }
@@ -57,7 +57,7 @@ extension Networking: NetworkingProtocol {
     /// - parameter endpoint: Concrete `Endpoint` from where data is fetched.
     /// - returns: Decoded result as `T` type.
     /// - throws: `NetworkError` if any value throws an error during execution.
-    func execute<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
+    public func execute<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
         let data = try await dataTask(endpoint)
         return try decode(with: data)
     }

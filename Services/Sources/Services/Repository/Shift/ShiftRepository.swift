@@ -8,7 +8,7 @@
 import Foundation
 
 /// Protocol to define all methods for shift repository
-protocol ShiftRepositoryProtocol {
+public protocol ShiftRepositoryProtocol {
     /// Fetch shifts
     ///
     /// - parameter request: Request object to define which shifts to fetch.
@@ -18,11 +18,11 @@ protocol ShiftRepositoryProtocol {
 }
 
 /// Shift repository to manage data using networking
-final class ShiftRepository: ShiftRepositoryProtocol {
+public final class ShiftRepository: ShiftRepositoryProtocol {
     // Networking
     private let networking: NetworkingProtocol
     
-    init(networking: NetworkingProtocol) {
+    public init(networking: NetworkingProtocol = Networking.shared) {
         self.networking = networking
     }
     
@@ -31,7 +31,7 @@ final class ShiftRepository: ShiftRepositoryProtocol {
     /// - parameter request: Request object to define which shifts to fetch.
     /// - returns: `FetchShiftsResponse` containing the requested shifts.
     /// - throws: An error if networking gives an error.
-    func fetchShifts(_ request: FetchShiftsRequest) async throws -> FetchShiftsResponse {
+    public func fetchShifts(_ request: FetchShiftsRequest) async throws -> FetchShiftsResponse {
         try await networking.execute(ShiftEndpoint.fetchShifts(request))
     }
 }

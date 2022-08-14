@@ -8,13 +8,13 @@
 import Foundation
 
 /// Type alias used for HTTP request headers.
-typealias ReaquestHeaders = [String: String]
+public typealias ReaquestHeaders = [String: String]
 
 /// Type alias used for HTTP request parameters. Used for query parameters for GET requests and in the HTTP body for POST, PUT and PATCH requests.
-typealias RequestParameters = [String : Any]
+public typealias RequestParameters = [String : Any]
 
 /// HTTP request methods.
-enum RequestMethod: String {
+public enum RequestMethod: String {
     /// HTTP GET
     case get = "GET"
     /// HTTP POST
@@ -28,7 +28,7 @@ enum RequestMethod: String {
 }
 
 /// Protocol to which the HTTP requests must conform.
-protocol Endpoint {
+public protocol Endpoint {
     
     /// Base URL of the environment.
     var baseURL: String { get }
